@@ -6,15 +6,15 @@ export const Navbar = () => {
   const { language } = useContext(languageContext);
   const { theme,setTheme } = useContext(themeContext);
 
-  function handleTheme(){
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  }
+  const changeTheme = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
 
   return (
     <div className="navbar">
       <span>Dialecto</span>
       <div className="right">
-        <button onClick={() => handleTheme()}>Change theme</button>
+        <button onClick={() => changeTheme()}>{theme === "light" ? "Dark" : "Light"} theme</button>
         <span>{language}</span>
       </div>
     </div>
